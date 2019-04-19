@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>品宅装饰科技</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.4.css" />
+    <!--
+      <link rel="stylesheet" type="text/css" href="css/font-awesome.4.6.0.css">
+    -->
+    <link rel="stylesheet" type="text/css" href="libs/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootsnav.css" />
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <nav class="navbar navbar-default navbar-mobile bootsnav">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#navbar-menu"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul
+              class="nav navbar-nav"
+              data-in="fadeInDown"
+              data-out="fadeOutUp"
+            >
+              <li class="li"><a href="index.html">PINZA</a></li>
+              <li class="dropdown li">
+                <a
+                  href="about/about.html"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  >我们是谁</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a href="about/about.html">关于品宅</a></li>
+                  <li><a href="about/partner.html">品宅合伙人</a></li>
+                  <li><a href="about/corevalue.html">核心价值</a></li>
+                  <li><a href="about/contact.html">联系我们</a></li>
+                </ul>
+              </li>
+              <li class="dropdown li">
+                <a
+                  href="product/product.html"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  >产品服务</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a href="product/product.html">了解装配式内装</a></li>
+                  <li><a href="product/service.html">部装产品及服务</a></li>
+                  <li><a href="product/advantage.html">核心优势</a></li>
+                </ul>
+              </li>
+              <li class="img">
+                <img
+                  src="images/logo-05.png"
+                  width="220"
+                  style="position: absolute;z-index:9999"
+                />
+              </li>
+              <li class="dropdown li margin-left">
+                <a
+                  href="./project/project.html?currentTab=0"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  >项目案例</a
+                >
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="./project/project.html?currentTab=0">长租公寓</a>
+                  </li>
+                  <li>
+                    <a href="./project/project.html?currentTab=1">租赁住房</a>
+                  </li>
+                  <li>
+                    <a href="./project/project.html?currentTab=2">商品住房</a>
+                  </li>
+                  <li>
+                    <a href="./project/project.html?currentTab=3">商业办公</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="li"><a href="news/news-list.html">新闻动态</a></li>
+              <li class="li"><a href="careers/careers.html">人才发展</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="banner_box" style="cursor: pointer">
+        <div class="swiper-container" id="banner">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide"
+              v-for="(item,index) in photoList[0].photoList"
+              :key="index"
+            >
+              <div class="banner_bg">
+                <img style="width:100%;" :src="item.url" />
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="main" style="background-image: url('images/di-1.png')">
+        <div class="content">
+          <div class="container">
+            <div class="col-sm-3 cont-left">
+              <img src="images/decoration.png" width="54" />
+            </div>
+            <div class="col-sm-4">
+              <div class="text">
+                <p class="text-header">品宅装饰科技</p>
+                <p style="line-height: 32px">
+                  上海品宅装饰科技有限公司是装配式内装部品和整装集成服务商，拥有CARR®
+                  卡瑞装配化部品系统和 屋佳®
+                  系列装配式整装套餐，向长租公寓、租赁住宅、精品酒店、养老医疗、住宅精装市场，提供装配式内装一站式解决方案。<br />
+                  我们的使命：让装修更简单。
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-5 cont-right">
+              <img src="images/cont-right.png" width="280" />
+            </div>
+          </div>
+        </div>
+        <div class="content sec2 margin-80">
+          <div class="opacity-full text-center margin-40">
+            <img src="images/map.png" width="560" style="padding-top: 20px" />
+          </div>
+          <div class="position-relative">
+            <h2>持续创新·引领行业·改变世界</h2>
+            <div class="model">
+              <ul>
+                <li class="item">
+                  <!-- <i class='img first'></i> -->
+                  <span class="num">40+</span>
+                  <span class="description">服务了40多个项目</span>
+                </li>
+                <li class="item">
+                  <span class="num">20+</span>
+                  <span class="description">成功打造20多个标杆</span>
+                </li>
+                <li class="item">
+                  <span class="num">3500+</span>
+                  <span class="description">顺利交付3500套房</span>
+                </li>
+                <li class="item">
+                  <span class="num">5+</span>
+                  <span class="description">创造5个国内第一</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content sec3">
+          <!-- <div class="opacity-full" style="padding-top: 300px"> -->
+          <!-- <img src="images/sec3.png" width="100%"> -->
+          <!-- </div> -->
+          <div class="position-relative">
+            <div class="sec3-title"><span>我们的服务</span></div>
+            <div class="sec3-header"><span>装配式内装服务</span></div>
+            <div class="sec3-content">
+              <div class="col-sm-6 item">
+                <ul>
+                  <li>
+                    <i
+                      class="img"
+                      style=" background-image: url(images/img1.png);"
+                    ></i>
+                    <div class="right">
+                      <p>工程咨询</p>
+                      <p>Engineering Consultation</p>
+                    </div>
+                  </li>
+                  <li>
+                    <i
+                      class="img"
+                      style=" background-image: url(images/img2.png);"
+                    ></i>
+                    <div class="right">
+                      <p>材料供应</p>
+                      <p>material Supplies</p>
+                    </div>
+                  </li>
+                  <li>
+                    <i
+                      class="img"
+                      style=" background-image: url(images/img3.png);"
+                    ></i>
+                    <div class="right">
+                      <p>项目管理</p>
+                      <p>Project Management</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-6 item">
+                <ul style="margin-left: 30px">
+                  <li>
+                    <i
+                      class="img"
+                      style=" background-image: url(images/img4.png);"
+                    ></i>
+                    <div class="right">
+                      <p>室内设计</p>
+                      <p>Interior Design</p>
+                    </div>
+                  </li>
+                  <li>
+                    <i
+                      class="img"
+                      style=" background-image: url(images/img5.png);"
+                    ></i>
+                    <div class="right">
+                      <p>施工安装</p>
+                      <p>General Construction</p>
+                    </div>
+                  </li>
+                  <li>
+                    <i
+                      class="img"
+                      style=" background-image: url(images/img6.png);"
+                    ></i>
+                    <div class="right">
+                      <p>售后服务</p>
+                      <p>Refurbishment Service</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content sec4">
+          <div class="swiper-container2">
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide"
+                v-for="(item,index) in projectList"
+                :key="index"
+              >
+                <a
+                  :href="'./project/project.html'+'?'+'currentTab'+'='+item.currentTab+'&'+'currentProject'+'='+item.currentProject"
+                  ><img :src="item.mainPhotoList[0].url" width="100%"
+                /></a>
+                <div class="slide-text">{{ item.name }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content sec5">
+          <h2>OUR PRODUCTS</h2>
+          <h3>我们的产品</h3>
+          <p>
+            品宅拥有完善的供应链体系和完备的产品库支持，将自有的装配化内装标准化部件与工业化内装部品结合，<br />
+            基于装配式科技内装的现场装配技术，<br />
+            最终为业主实现一站式的装配式内装配套产品装修服务。<br />
+          </p>
+          <span></span>
+          <div class="sec5-content">
+            <img src="images/sec5.png" width="100%" />
+          </div>
+        </div>
+        <div class="content sec5">
+          <h2>OUR CLIENTS</h2>
+          <h3>我们的客户</h3>
+
+          <div class="text-center" style="margin:100px">
+            <img src="images/sec6.png" width="800" />
+          </div>
+        </div>
+      </div>
+      <div class="toTop"></div>
+
+      <div class="footer">
+        <div class="footer-box">
+          <div class="footer-box-content">
+            <div class="inline-block list">
+              <ul>
+                <li><a href="about/about.html">我们是谁</a></li>
+                <li><a href="about/about.html">关于品宅</a></li>
+                <li><a href="about/partner.html">品宅合伙人</a></li>
+                <li><a href="about/corevalue.html">核心价值</a></li>
+                <li><a href="about/contact.html">联系我们</a></li>
+              </ul>
+            </div>
+            <div class="inline-block list">
+              <ul>
+                <li><a href="product/product.html">产品服务</a></li>
+                <li><a href="product/product.html">了解装配式内装</a></li>
+                <li><a href="product/service.html">部装产品及服务</a></li>
+                <li><a href="product/advantage.html">核心优势</a></li>
+              </ul>
+            </div>
+            <div class="inline-block list">
+              <ul>
+                <li>
+                  <a href="./project/project.html?currentTab=0">项目案例</a>
+                </li>
+                <li>
+                  <a href="./project/project.html?currentTab=0">长租公寓</a>
+                </li>
+                <li>
+                  <a href="./project/project.html?currentTab=1">租赁住房</a>
+                </li>
+                <li>
+                  <a href="./project/project.html?currentTab=2">商品住房</a>
+                </li>
+                <li>
+                  <a href="./project/project.html?currentTab=3">商业办公</a>
+                </li>
+              </ul>
+            </div>
+            <div class="inline-block list">
+              <ul>
+                <li class="li"><a href="news/news-list.html">新闻动态</a></li>
+              </ul>
+            </div>
+            <div class="inline-block list">
+              <ul>
+                <li class="li"><a href="careers/careers.html">人才发展</a></li>
+              </ul>
+            </div>
+            <div class="inline-block list" style="text-align: right">
+              <img src="images/pinza.png" alt="品宅二维码" width="60%" />
+            </div>
+          </div>
+          <div class="footer-box-content">
+            <div class="inline-block content-list">
+              <p>联系电话</p>
+              <p style="font-size: 12px">
+                李女士 13917243731 曾先生 13122526059 孙先生
+                13817578973（家装咨询）
+              </p>
+            </div>
+            <div class="inline-block content-list">
+              <p>办公地址</p>
+              <p style="font-size: 12px">上海市徐汇区桂林路402号76幢310室</p>
+            </div>
+            <div class="inline-block content-list">
+              <p>研发中心地址</p>
+              <p style="font-size: 12px">上海浦东新区康杉路518号B区102室</p>
+            </div>
+          </div>
+          <div class="footer-box-content">
+            <p class="content-bottom">
+              COPYRIGHT (©) 2017 PINZA- ALLSIZE WEB DESIGN
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/swiper.min.js"></script>
+    <script type="text/javascript" src="js/bootsnav.js"></script>
+
+    <script src="http://pinzafile.oss-cn-shanghai.aliyuncs.com/vue-element/dist/vue.js"></script>
+    <script src="http://pinzafile.oss-cn-shanghai.aliyuncs.com/axios/axios.js"></script>
+    <script src="./js/trueUrl.js"></script>
+  </body>
+</html>
+
+<script>
+  function jqSwiper() {
+    $(document).ready(function() {
+      var swiper = new Swiper(".swiper-container", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        autoplay: {
+          delay: 2000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true
+        },
+        autoplayDisableOnInteraction: false
+      });
+      $("#banner").mouseenter(function() {
+        swiper.autoplay.stop(); //停止轮播
+      });
+      $("#banner").mouseout(function() {
+        swiper.autoplay.start(); //停止轮播
+      });
+
+      $(window).on("scroll", function() {
+        var w_scroll = $(this).scrollTop(),
+          w_height = $(this).height();
+        var i = 0;
+        var sbl_interval = function() {
+          var sbl = $(".sec2 .item");
+          sbl.eq(i).addClass("active");
+          i++;
+          if (i > 3) {
+            clearInterval(_sbl_interval);
+          }
+        };
+
+        if (w_scroll > $(".sec2").offset().top - w_height) {
+          _sbl_interval = setInterval(sbl_interval, 800);
+        }
+      });
+
+      var swiper2 = new Swiper(".swiper-container2", {
+        slidesPerView: "2",
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 2000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false
+        }
+      });
+    });
+  }
+
+  var app = new Vue({
+    el: "#app",
+    data: function() {
+      return {
+        photoList: [{ photoList: [] }],
+        projectList: []
+      };
+    },
+    methods: {},
+    computed: {},
+    mounted: function() {
+      $.ajax(trueUrl + "/photoList", {
+        success: function(res) {
+          console.log(res.data);
+          app.photoList = res.data;
+          app.$nextTick(function() {
+            jqSwiper();
+          });
+        },
+        error: function(error) {
+          console.error(error);
+        }
+      });
+      $.ajax(trueUrl + "/projectList", {
+        success: function(res) {
+          console.log(res.data);
+          let temp = [];
+          res.data.forEach(function(element, index) {
+            element.project.forEach(function(ele, id) {
+              ele.currentTab = index;
+              ele.currentProject = id;
+            });
+          });
+          res.data.forEach(function(element) {
+            temp = temp.concat(element.project);
+          });
+          app.projectList = temp;
+          app.$nextTick(function() {
+            jqSwiper();
+          });
+        },
+        error: function(error) {
+          console.error(error);
+        }
+      });
+    }
+    // async mounted() {
+    //   try {
+    //     // 异步加载json
+    //     let response = await axios.post(`${trueUrl}/newsList`, {});
+    //     console.log(response.data.data);
+    //     this.新闻列表 = response.data.data;
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
+  });
+</script>

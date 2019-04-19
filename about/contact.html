@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>联系我们</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-3.3.4.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootsnav.css" />
+    <link rel="stylesheet" type="text/css" href="../css/service.css" />
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=eGrCPHT81d8j3bfazGZHSaqnsGKlhGqf"></script>
+
+    <style>
+      #allmap {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar navbar-default navbar-mobile bootsnav">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#navbar-menu"
+          >
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+            <li class="li"><a href="../index.html">PINZA</a></li>
+            <li class="dropdown li">
+              <a
+                href="../about/about.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >我们是谁</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="../about/about.html">关于品宅</a></li>
+                <li><a href="../about/partner.html">品宅合伙人</a></li>
+                <li><a href="../about/corevalue.html">核心价值</a></li>
+                <li><a href="../about/contact.html">联系我们</a></li>
+              </ul>
+            </li>
+            <li class="dropdown li">
+              <a
+                href="../product/product.html"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >产品服务</a
+              >
+              <ul class="dropdown-menu">
+                <li><a href="../product/product.html">了解装配式内装</a></li>
+                <li><a href="../product/service.html">部装产品及服务</a></li>
+                <li><a href="../product/advantage.html">核心优势</a></li>
+              </ul>
+            </li>
+            <li class="img">
+              <img
+                src="../images/logo-05.png"
+                width="220"
+                style="position: absolute;z-index: 9999"
+              />
+            </li>
+            <li class="dropdown li margin-left">
+              <a
+                href="../project/project.html?currentTab=0"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+                >项目案例</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../project/project.html?currentTab=0">长租公寓</a>
+                </li>
+                <li>
+                  <a href="../project/project.html?currentTab=1">租赁住房</a>
+                </li>
+                <li>
+                  <a href="../project/project.html?currentTab=2">商品住房</a>
+                </li>
+                <li>
+                  <a href="../project/project.html?currentTab=3">商业办公</a>
+                </li>
+              </ul>
+            </li>
+            <li class="li"><a href="../news/news-list.html">新闻动态</a></li>
+            <li class="li"><a href="../careers/careers.html">人才发展</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="banner text-center"
+      style="background-image: url('../images/banner-about.png')"
+    >
+      <p>
+        关于品宅 <br />
+        ABOUT PINZA
+      </p>
+    </div>
+    <div class="main" style="background-image: url('../images/di-3.png')">
+      <div class="main-container">
+        <div class="content">
+          <p class="content-p">
+            <span class="color-red">·</span>您所在的位置：<span>我们是谁</span
+            ><span class="red">>联系我们</span>
+          </p>
+        </div>
+        <div class="content-header">
+          <a href="../about/about.html">
+            <div class="inline-block list">关于品宅</div>
+          </a>
+          <a href="../about/partner.html">
+            <div class="inline-block list">品宅合伙人</div>
+          </a>
+          <a href="../about/corevalue.html">
+            <div class="inline-block list">核心价值</div>
+          </a>
+          <a href="../about/contact.html">
+            <div class="inline-block list active">联系我们</div>
+          </a>
+        </div>
+        <div class="content-body margin-40">
+          <h2>CONTACT US</h2>
+          <div class="main-container-title">
+            <div class="title text-center">
+              <img src="../images/about-title.png" alt="" width="100%" />
+              <span class="red">联系我们</span>
+            </div>
+          </div>
+          <div class="text-center map-box"><div id="allmap"></div></div>
+        </div>
+      </div>
+
+      <div class="main-container-5 ">
+        <p class="margin-40" style="color: #4a4a4a;line-height: 24px">
+          欢迎您预约参观品宅研发中心，详细了解品宅装配化科技内装技术体系。<br />
+          如果您有任何商务合作的需求，都可以通过以下方式联系我们。
+        </p>
+      </div>
+      <div class="main-container-5">
+        <div class="margin-80" style="padding-bottom: 80px">
+          <div class="main-content-box">
+            <div class="inline-block">
+              <p>
+                官方网址
+                <span style="margin-left: 10px">http://www.pinza.com.cn</span>
+              </p>
+              <p>
+                企业邮箱
+                <span style="margin-left: 10px">info@pinza.com.cn</span>
+              </p>
+              <p>
+                固定电话 <span style="margin-left: 10px">021-62298012</span>
+              </p>
+            </div>
+            <div class="inline-block" style="margin-left: 30px"></div>
+            <div class="inline-block">
+              <p>
+                <span class="inline-block"
+                  >办公地址 <br />
+                  <span style="font-size: 13px"
+                    >上海市徐汇区桂林路402号76幢310室</span
+                  >
+                </span>
+                <span class="inline-block" style="margin-left: 60px"
+                  >研发中心地址 <br />
+                  <span style="font-size: 13px"
+                    >上海浦东新区康杉路518号B区102室</span
+                  >
+                </span>
+              </p>
+              <p>
+                联系电话 <br />
+                <span style="font-size: 13px"
+                  >李女士 13917243731 曾先生 13122526059 孙先生
+                  13817578973（家装咨询）</span
+                >
+              </p>
+            </div>
+            <div class="inline-block" style="margin-left: 30px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toTop"></div>
+
+    <div class="footer">
+      <div class="footer-box">
+        <div class="footer-box-content">
+          <div class="inline-block list">
+            <ul>
+              <li><a href="../aabout/about.html">我们是谁</a></li>
+              <li><a href="../about/about.html">关于品宅</a></li>
+              <li><a href="../about/partner.html">品宅合伙人</a></li>
+              <li><a href="../about/corevalue.html">核心价值</a></li>
+              <li><a href="../about/contact.html">联系我们</a></li>
+            </ul>
+          </div>
+          <div class="inline-block list">
+            <ul>
+              <li><a href="../product/product.html">产品服务</a></li>
+              <li><a href="../product/product.html">了解装配式内装</a></li>
+              <li><a href="../product/service.html">部装产品及服务</a></li>
+              <li><a href="../product/advantage.html">核心优势</a></li>
+            </ul>
+          </div>
+          <div class="inline-block list">
+            <ul>
+              <li>
+                <a href="./project/project.html?currentTab=0">项目案例</a>
+              </li>
+              <li>
+                <a href="./project/project.html?currentTab=0">长租公寓</a>
+              </li>
+              <li>
+                <a href="./project/project.html?currentTab=1">租赁住房</a>
+              </li>
+              <li>
+                <a href="./project/project.html?currentTab=2">商品住房</a>
+              </li>
+              <li>
+                <a href="./project/project.html?currentTab=3">商业办公</a>
+              </li>
+            </ul>
+          </div>
+          <div class="inline-block list">
+            <ul>
+              <li class="li"><a href="../news/news-list.html">新闻动态</a></li>
+            </ul>
+          </div>
+          <div class="inline-block list">
+            <ul>
+              <li class="li"><a href="../careers/careers.html">人才发展</a></li>
+            </ul>
+          </div>
+          <div class="inline-block list" style="text-align: right">
+            <img src="../images/pinza.png" alt="品宅二维码" width="60%" />
+          </div>
+        </div>
+        <div class="footer-box-content">
+          <div class="inline-block content-list">
+            <p>联系电话</p>
+            <p style="font-size: 12px">
+              李女士 13917243731 曾先生 13122526059 孙先生
+              13817578973（家装咨询）
+            </p>
+          </div>
+          <div class="inline-block content-list">
+            <p>办公地址</p>
+            <p style="font-size: 12px">上海市徐汇区桂林路402号76幢310室</p>
+          </div>
+          <div class="inline-block content-list">
+            <p>研发中心地址</p>
+            <p style="font-size: 12px">上海浦东新区康杉路518号B区102室</p>
+          </div>
+        </div>
+        <div class="footer-box-content">
+          <p class="content-bottom">
+            COPYRIGHT (©) 2017 PINZA- ALLSIZE WEB DESIGN
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../libs/swiper.min.js"></script>
+<script type="text/javascript" src="../js/bootsnav.js"></script>
+<script type="text/javascript">
+  // 百度地图API功能
+  var map = new BMap.Map("allmap");
+  map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+  var local = new BMap.LocalSearch(map, {
+    renderOptions: { map: map }
+  });
+  local.search("上海品宅研发中心");
+  map.enableScrollWheelZoom(true);
+</script>
