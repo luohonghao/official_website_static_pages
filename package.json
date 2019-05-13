@@ -1,0 +1,14 @@
+{
+  "name": "official_website_static_pages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SilverLeaves/official_website_static_pages.git",
+  "author": "Silver·湫曗 <autumnsilverleaves@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev":"stylus -w cooperation "
+  },
+  "dependencies": {
+    "stylus": "^0.54.5"
+  }
+}
