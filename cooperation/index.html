@@ -146,8 +146,9 @@
                             if (temp.cooperationType=="其它") {
                                 temp.cooperationType=this.options.otherCooperationType.name
                             }
-
-                            let response = await axios.post("http://192.168.1.174:7001/insertMany",{
+                            let baseUrl="http://192.168.1.174:7001";
+                            // baseUrl="http://govapi.pinza.com.cn";
+                            let response = await axios.post(baseUrl+"/insertMany",{
                                 token:"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4",
                                 docs:[temp],
                                 collection:"cooperation"

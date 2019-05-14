@@ -1,7 +1,6 @@
 fontSize = 17;
 // titleLabelWeight= 500
-titleLabelWeight= initial
-
+titleLabelWeight = initial;
 
 .bottom-gif {
     width: 100%;
@@ -17,7 +16,7 @@ label {
     margin: 0.3em 0em;
 }
 
-input[type=text],input[type=tel], textarea {
+input[type=text], input[type=tel], textarea {
     border-radius: 0.1em;
     padding: 0.4em;
 }
@@ -26,6 +25,7 @@ input[type=text],input[type=tel], textarea {
     label:nth-child(1) {
         font-weight: titleLabelWeight;
     }
+
     margin: 1em 0em;
     font-size: fontSize px;
     width: 100%;
@@ -42,11 +42,12 @@ input[type=text],input[type=tel], textarea {
         width: 100%;
     }
 
-    input[type=tel]{
-        height: 34.6 px
+    input[type=tel] {
+        height: 34.6 px;
     }
+
     textarea {
-        resize: vertical
+        resize: vertical;
     }
 }
 
@@ -54,6 +55,7 @@ input[type=text],input[type=tel], textarea {
     label:nth-child(1) {
         font-weight: titleLabelWeight;
     }
+
     label {
         display: inline-block;
         width: 49%;
@@ -71,7 +73,7 @@ input[type=text],input[type=tel], textarea {
     }
 
     input[type=text] {
-        display:  inline-block;
+        display: inline-block;
         font-size: fontSize px;
         background-color: #f3f3f3;
         border: 0em;
@@ -117,6 +119,12 @@ p {
     width: 40px;
 }
 
-.validatorMessage{
-    color: #e6a23c
-    }
+.validatorMessage {
+    color: #e6a23c;
+}
+
+body {
+    max-width: 360px;
+    margin: 0em auto
+    padding-top: 0em
+}

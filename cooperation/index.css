@@ -96,3 +96,8 @@ p {
 .validatorMessage {
   color: #e6a23c;
 }
+body {
+  max-width: 360px;
+  margin: 0em auto;
+  padding-top: 0em;
+}
