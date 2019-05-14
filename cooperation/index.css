@@ -93,3 +93,6 @@ p {
   height: 39.099999999999994px;
   width: 40px;
 }
+.validatorMessage {
+  color: #e6a23c;
+}

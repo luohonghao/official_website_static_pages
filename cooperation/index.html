@@ -15,7 +15,7 @@
             <div class="input-text">
                 <label>企业名称： <input type="text" v-validate="'required'" v-model="form.companyName"
                         name="companyName"></label>
-                <span>{{ errors.first('companyName')?"此项请务必填写":"" }}</span>
+                <span class="validatorMessage">{{ errors.first('companyName')?"此项请务必填写":"" }}</span>
 
             </div>
 
@@ -23,23 +23,24 @@
                 <label>企业类型：</label><br />
                 <label v-for="item in options.companyTypeList"><input v-validate="'required'" type="radio"
                         name="companyType" v-model="form.companyType" :value="item.name"></input>{{item.name}}</label>
-                <span>{{ errors.first('companyType')?"此项请务必填写":"" }}</span>
+                        <br />
+                <span class="validatorMessage">{{ errors.first('companyType')?"此项请务必填写":"" }}</span>
             </div>
 
             <div class="input-text">
                 <label>联系人：<input type="text" v-model="form.name" v-validate="'required'" name="name"></label>
-                <span>{{ errors.first('name')?"此项请务必填写":"" }}</span>
+                <span class="validatorMessage">{{ errors.first('name')?"此项请务必填写":"" }}</span>
             </div>
 
             <div class="input-text">
                 <label>职务： <input type="text" v-model="form.job" v-validate="'required'" name="job"></label>
-                <span>{{ errors.first('job')?"此项请务必填写":"" }}</span>
+                <span class="validatorMessage">{{ errors.first('job')?"此项请务必填写":"" }}</span>
 
             </div>
 
             <div class="input-text">
                 <label>联系方式： <input type="tel" v-model="form.phone" v-validate="'required'" name="phone"></label>
-                <span>{{ errors.first('phone')?"此项请务必填写":"" }}</span>
+                <span class="validatorMessage">{{ errors.first('phone')?"此项请务必填写":"" }}</span>
 
             </div>
 
@@ -54,16 +55,16 @@
 
                 <div v-if="form.cooperationType=='其它'"><input type="text" v-model="options.otherCooperationType.name"
                         v-validate="'required'" name="otherCooperationType">
-                    <span>{{ errors.first('otherCooperationType')?"请注明其他类型":"" }}</span>
+                    <span class="validatorMessage">{{ errors.first('otherCooperationType')?"请注明其他类型":"" }}</span>
                 </div>
-                <span>{{ errors.first('cooperationType')?"此项请务必填写":"" }}</span>
+                <span class="validatorMessage">{{ errors.first('cooperationType')?"此项请务必填写":"" }}</span>
 
             </div>
 
             <div class="input-text">
                 <label>需求描述：<textarea cols="30" rows="6" v-model="form.want" v-validate="'required'"
                         name="want"></textarea></label>
-                <span>{{ errors.first('want')?"此项请务必填写":"" }}</span></div>
+                <span class="validatorMessage">{{ errors.first('want')?"此项请务必填写":"" }}</span></div>
 
         </form>
 
