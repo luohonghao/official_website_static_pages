@@ -13,7 +13,7 @@
         <h1 class="mytitle"><span></span>合作需求登记</h1>
         <form>
             <div class="input-text">
-                <label>企业名称： <input id="companyName" type="text" v-model="form.companyName"></label>
+                <label>企业名称： <input type="text" v-model="form.companyName" name="companyName"></label>
 
             </div>
 
@@ -24,27 +24,28 @@
             </div>
 
             <div class="input-text">
-                <label>联系人：<input id="companyName" type="text" v-model="form.name"></label>
+                <label>联系人：<input type="text" v-model="form.name" name="name"></label>
 
             </div>
 
             <div class="input-text">
-                <label>职务： <input id="companyName" type="text" v-model="form.job"></label>
+                <label>职务： <input  type="text" v-model="form.job" name="job"></label>
 
             </div>
 
             <div class="input-text">
-                <label>联系方式： <input type="tel" v-model="form.phone"></label>
+                <label>联系方式： <input type="tel" v-model="form.phone" name="phone"></label>
 
             </div>
 
             <div class="input-radio-1">
-                <label>合作形式：</label><br />
+                <label for="">合作形式：</label><br />
 
                 <label v-for="item in options.cooperationTypeList"><input type="radio" name="cooperationType"
                         v-model="form.cooperationType" :value="item.name"></input>{{item.name}}</label>
-                <label><input type="radio" name="cooperationType" v-model="form.cooperationType"
+                <label for="other"><input id="other" type="radio" name="cooperationType" v-model="form.cooperationType"
                         :value="options.otherCooperationType.name"></input>其他：</label>
+
                         <input  type="text" 
                         v-model="options.otherCooperationType.name">
 
@@ -56,7 +57,7 @@
         </form>
 
         <div class="submit-button">
-            <button>提 交</button>
+            <button @click="submit">提 交</button>
         </div>
 
         <p>我们在收到信息后，会在1周内安排业务专员与您取得联系。</p>
@@ -117,7 +118,19 @@
                 }
 
             },
-            computed: {
+            methods: {
+                submit(){
+                    let keys=Object.keys(this.form)
+                    let result=keys.filter((ele)=>{
+                        return this.form[ele]?false:true
+                    })
+                   
+                    if (result.length==0) {
+                        console.log("pass")
+                    }else{
+                        console.log("result",result)
+                    }
+                }
             }
         })
     </script>
