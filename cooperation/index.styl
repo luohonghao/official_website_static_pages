@@ -17,7 +17,7 @@ label {
     margin: 0.3em 0em;
 }
 
-input[type=text], textarea {
+input[type=text],input[type=tel], textarea {
     border-radius: 0.1em;
     padding: 0.4em;
 }
@@ -40,6 +40,13 @@ input[type=text], textarea {
         background-color: #f3f3f3;
         border: 0em;
         width: 100%;
+    }
+
+    input[type=tel]{
+        height: 34.6 px
+    }
+    textarea {
+        resize: vertical
     }
 }
 
@@ -64,7 +71,7 @@ input[type=text], textarea {
     }
 
     input[type=text] {
-        display: inline-block;
+        display:  inline-block;
         font-size: fontSize px;
         background-color: #f3f3f3;
         border: 0em;

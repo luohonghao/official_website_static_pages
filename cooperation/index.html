@@ -9,70 +9,117 @@
 </head>
 
 <body>
-    <h1 class="mytitle"><span></span>合作需求登记</h1>
-    <form>
-        <div class="input-text">
-            <label>企业名称： <input id="companyName" type="text"></label>
+    <div id="app">
+        <h1 class="mytitle"><span></span>合作需求登记</h1>
+        <form>
+            <div class="input-text">
+                <label>企业名称： <input id="companyName" type="text" v-model="form.companyName"></label>
 
+            </div>
+
+            <div class="input-radio">
+                <label>企业类型：</label><br />
+                <label v-for="item in options.companyTypeList"><input type="radio" name="companyType"
+                        v-model="form.companyType" :value="item.name"></input>{{item.name}}</label>
+            </div>
+
+            <div class="input-text">
+                <label>联系人：<input id="companyName" type="text" v-model="form.name"></label>
+
+            </div>
+
+            <div class="input-text">
+                <label>职务： <input id="companyName" type="text" v-model="form.job"></label>
+
+            </div>
+
+            <div class="input-text">
+                <label>联系方式： <input type="tel" v-model="form.phone"></label>
+
+            </div>
+
+            <div class="input-radio-1">
+                <label>合作形式：</label><br />
+
+                <label v-for="item in options.cooperationTypeList"><input type="radio" name="cooperationType"
+                        v-model="form.cooperationType" :value="item.name"></input>{{item.name}}</label>
+                <label><input type="radio" name="cooperationType" v-model="form.cooperationType"
+                        :value="options.otherCooperationType.name"></input>其他：</label>
+                        <input  type="text" 
+                        v-model="options.otherCooperationType.name">
+
+            </div>
+
+            <div class="input-text">
+                <label>需求描述：<textarea cols="30" rows="6" v-model="form.want"></textarea></label>
+            </div>
+        </form>
+
+        <div class="submit-button">
+            <button>提 交</button>
         </div>
-        <div class="input-radio">
-            <label>企业类型：</label><br />
-            <label><input type="radio" name="companyType"></input>住宅开发商</label>
-            <label><input type="radio" name="companyType"></input>设计公司</label>
-            <label><input type="radio" name="companyType"></input>公寓酒店运营商</label>
-            <label><input type="radio" name="companyType"></input>协会平台</label>
-            <label><input type="radio" name="companyType"></input>施工企业</label>
-            <label><input type="radio" name="companyType"></input>其他</label>
-            <label><input type="radio" name="companyType"></input>材料供应商</label>
-        </div>
 
-        <div class="input-text">
-            <label>联系人：<input id="companyName" type="text"></label>
+        <p>我们在收到信息后，会在1周内安排业务专员与您取得联系。</p>
 
-        </div>
+        <p>若您还有其他需求需要沟通，可通过以下方式与我们联系。<br />联系方式：方先生 <a href="tel:13917243731">13917243731</a></p>
 
-        <div class="input-text">
-            <label>职务： <input id="companyName" type="text"></label>
+        <p>感谢您对品宅装配式内装的肯定及支持!</p>
 
-        </div>
-
-        <div class="input-text">
-            <label>联系方式： <input id="companyName" type="text"></label>
-
-        </div>
-
-        <div class="input-radio-1">
-            <label>合作形式：</label><br />
-            <label><input type="radio" name="companyType"></input>项目合作</label>
-            <label><input type="radio" name="companyType"></input>渠道代理</label>
-            <label><input type="radio" name="companyType"></input>其他：<input id="companyName" type="text"></label>
-
-        </div>
-
-        <div class="input-text">
-            <label>需求描述：<textarea name="" id="" cols="30" rows="6"></textarea></label>
-        </div>
-    </form>
-
-    <div class="submit-button">
-        <button>提 交</button>
+        <img src="./gif.gif" alt="gif" class="bottom-gif">
     </div>
-
-    <p>我们在收到信息后，会在1周内安排业务专员与您取得联系。</p>
-
-    <p>若您还有其他需求需要沟通，可通过以下方式与我们联系。<br />联系方式：方先生 <a href="tel:13917243731">13917243731</a></p>
-
-
-
-
-    <p>感谢您对品宅装配式内装的肯定及支持!</p>
-
-    <img src="./gif.gif" alt="gif" class="bottom-gif">
 
     <script src="http://pinzafile.oss-cn-shanghai.aliyuncs.com/vue-element/dist/vue.js"></script>
     <script src="http://pinzafile.oss-cn-shanghai.aliyuncs.com/axios/axios.js"></script>
 
     <script>
+        let app = new Vue({
+            el: "#app",
+            data() {
+                return {
+                    form: {
+                        cooperationType: "",
+                        companyType: "",
+                        job: "",
+                        companyName: "",
+                        phone: "",
+                        name: "",
+                        want: ""
+
+                    },
+                    options: {
+                        companyTypeList: [{
+                            name: "住宅开发商"
+                        }, {
+                            name: "设计公司"
+                        }, {
+                            name: "公寓酒店运营商"
+                        }, {
+                            name: "协会平台"
+                        }, {
+                            name: "施工企业"
+                        }, {
+                            name: "其他"
+                        }, {
+                            name: "材料供应商"
+                        }, ],
+
+
+                        cooperationTypeList: [{
+                            name: "项目合作"
+                        }, {
+                            name: "渠道代理"
+                        },],
+
+                        otherCooperationType: {name:""},
+                    }
+
+
+                }
+
+            },
+            computed: {
+            }
+        })
     </script>
 </body>
 
