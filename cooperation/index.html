@@ -13,66 +13,81 @@
         <h1 class="mytitle"><span></span>合作需求登记</h1>
         <form>
             <div class="input-text">
-                <label>企业名称： <input type="text" v-model="form.companyName" name="companyName"></label>
+                <label>企业名称： <input type="text" v-validate="'required'" v-model="form.companyName"
+                        name="companyName"></label>
+                <span>{{ errors.first('companyName') }}</span>
 
             </div>
 
             <div class="input-radio">
                 <label>企业类型：</label><br />
-                <label v-for="item in options.companyTypeList"><input type="radio" name="companyType"
-                        v-model="form.companyType" :value="item.name"></input>{{item.name}}</label>
+                <label v-for="item in options.companyTypeList"><input v-validate="'required'" type="radio"
+                        name="companyType" v-model="form.companyType" :value="item.name"></input>{{item.name}}</label>
+                <span>{{ errors.first('companyType') }}</span>
             </div>
 
             <div class="input-text">
-                <label>联系人：<input type="text" v-model="form.name" name="name"></label>
+                <label>联系人：<input type="text" v-model="form.name" v-validate="'required'" name="name"></label>
+                <span>{{ errors.first('name') }}</span>
+            </div>
+
+            <div class="input-text">
+                <label>职务： <input type="text" v-model="form.job" v-validate="'required'" name="job"></label>
+                <span>{{ errors.first('job') }}</span>
 
             </div>
 
             <div class="input-text">
-                <label>职务： <input  type="text" v-model="form.job" name="job"></label>
-
-            </div>
-
-            <div class="input-text">
-                <label>联系方式： <input type="tel" v-model="form.phone" name="phone"></label>
+                <label>联系方式： <input type="tel" v-model="form.phone" v-validate="'required'" name="phone"></label>
+                <span>{{ errors.first('phone') }}</span>
 
             </div>
 
             <div class="input-radio-1">
                 <label for="">合作形式：</label><br />
 
-                <label v-for="item in options.cooperationTypeList"><input type="radio" name="cooperationType"
-                        v-model="form.cooperationType" :value="item.name"></input>{{item.name}}</label>
-                <label for="other"><input id="other" type="radio" name="cooperationType" v-model="form.cooperationType"
-                        :value="options.otherCooperationType.name"></input>其他：</label>
+                <label v-for="item in options.cooperationTypeList"><input type="radio" v-validate="'required'"
+                        name="cooperationType" v-model="form.cooperationType"
+                        :value="item.name"></input>{{item.name}}</label>
+                <label for="other"><input id="other" type="radio" v-validate="'required'" name="cooperationType"
+                        v-model="form.cooperationType" value="其它"></input>其他：</label>
 
-                        <input  type="text" 
-                        v-model="options.otherCooperationType.name">
+                <div v-if="form.cooperationType=='其它'"><input type="text" v-model="options.otherCooperationType.name"
+                        v-validate="'required'" name="otherCooperationType">
+
+                    <span>{{ errors.first('otherCooperationType') }}</span></div>
+
 
             </div>
 
             <div class="input-text">
-                <label>需求描述：<textarea cols="30" rows="6" v-model="form.want"></textarea></label>
-            </div>
-        </form>
+                <label>需求描述：<textarea cols="30" rows="6" v-model="form.want" v-validate="'required'"
+                        name="want"></textarea></label>
+                <span>{{ errors.first('want') }}</span></div>
+    </div>
+    </form>
 
-        <div class="submit-button">
-            <button @click="submit">提 交</button>
-        </div>
+    <div class="submit-button">
+        <button @click="submit">提 交</button>
+    </div>
 
-        <p>我们在收到信息后，会在1周内安排业务专员与您取得联系。</p>
+    <p>我们在收到信息后，会在1周内安排业务专员与您取得联系。</p>
 
-        <p>若您还有其他需求需要沟通，可通过以下方式与我们联系。<br />联系方式：方先生 <a href="tel:13917243731">13917243731</a></p>
+    <p>若您还有其他需求需要沟通，可通过以下方式与我们联系。<br />联系方式：方先生 <a href="tel:13917243731">13917243731</a></p>
 
-        <p>感谢您对品宅装配式内装的肯定及支持!</p>
+    <p>感谢您对品宅装配式内装的肯定及支持!</p>
 
-        <img src="./gif.gif" alt="gif" class="bottom-gif">
+    <img src="./gif.gif" alt="gif" class="bottom-gif">
     </div>
 
     <script src="http://pinzafile.oss-cn-shanghai.aliyuncs.com/vue-element/dist/vue.js"></script>
     <script src="http://pinzafile.oss-cn-shanghai.aliyuncs.com/axios/axios.js"></script>
+    <script src="https://cdn.bootcss.com/vee-validate/2.2.7/vee-validate.js"></script>
+    <script src="https://cdn.bootcss.com/vee-validate/2.2.7/locale/zh_CN.js"></script>
 
     <script>
+        Vue.use(VeeValidate);
+        // VeeValidate.localize('zh_CN');
         let app = new Vue({
             el: "#app",
             data() {
@@ -109,9 +124,11 @@
                             name: "项目合作"
                         }, {
                             name: "渠道代理"
-                        },],
+                        }, ],
 
-                        otherCooperationType: {name:""},
+                        otherCooperationType: {
+                            name: ""
+                        },
                     }
 
 
@@ -119,20 +136,22 @@
 
             },
             methods: {
-                submit(){
-                    let keys=Object.keys(this.form)
-                    let result=keys.filter((ele)=>{
-                        return this.form[ele]?false:true
+                submit() {
+                    let keys = Object.keys(this.form)
+                    let result = keys.filter((ele) => {
+                        return this.form[ele] ? false : true
                     })
-                   
-                    if (result.length==0) {
+
+                    if (result.length == 0) {
                         console.log("pass")
-                    }else{
-                        console.log("result",result)
+                    } else {
+                        console.log("result", result)
                     }
                 }
             }
         })
+
+        app.$validator.localize('zh_CN');
     </script>
 </body>
 
