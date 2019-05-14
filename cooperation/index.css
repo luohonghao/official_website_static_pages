@@ -15,8 +15,12 @@ textarea {
   padding: 0.4em;
 }
 .input-text {
+  margin: 1em 0em;
   font-size: 17px;
   width: 100%;
+}
+.input-text label:nth-child(1) {
+  font-weight: initial;
 }
 .input-text label {
   display: block;
@@ -29,9 +33,15 @@ textarea {
   border: 0em;
   width: 100%;
 }
+.input-radio label:nth-child(1) {
+  font-weight: initial;
+}
 .input-radio label {
   display: inline-block;
   width: 49%;
+}
+.input-radio-1 label:nth-child(1) {
+  font-weight: initial;
 }
 .input-radio-1 label {
   display: inline-block;

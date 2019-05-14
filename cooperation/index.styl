@@ -1,4 +1,7 @@
 fontSize = 17;
+// titleLabelWeight= 500
+titleLabelWeight= initial
+
 
 .bottom-gif {
     width: 100%;
@@ -20,6 +23,10 @@ input[type=text], textarea {
 }
 
 .input-text {
+    label:nth-child(1) {
+        font-weight: titleLabelWeight;
+    }
+    margin: 1em 0em;
     font-size: fontSize px;
     width: 100%;
 
@@ -37,6 +44,9 @@ input[type=text], textarea {
 }
 
 .input-radio {
+    label:nth-child(1) {
+        font-weight: titleLabelWeight;
+    }
     label {
         display: inline-block;
         width: 49%;
@@ -44,6 +54,10 @@ input[type=text], textarea {
 }
 
 .input-radio-1 {
+    label:nth-child(1) {
+        font-weight: titleLabelWeight;
+    }
+
     label {
         display: inline-block;
         width: 100%;
@@ -83,16 +97,15 @@ p {
 .mytitle {
     text-align: center;
     position: relative;
-    font-size: fontSize*2 px;
-    line-height: fontSize*2 px;
-    padding: 0.3em 0px
+    font-size: (fontSize * 2) px;
+    line-height: (fontSize * 2) px;
+    padding: 0.3em 0px;
 }
 
 .mytitle>span {
     float: left;
     background-color: #d4532b;
     display: inline-block;
-    height: fontSize*2.3 px;
+    height: (fontSize * 2.3) px;
     width: 40px;
-    
 }
