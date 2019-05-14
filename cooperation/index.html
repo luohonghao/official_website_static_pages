@@ -23,7 +23,7 @@
                 <label>企业类型：</label><br />
                 <label v-for="item in options.companyTypeList"><input v-validate="'required'" type="radio"
                         name="companyType" v-model="form.companyType" :value="item.name"></input>{{item.name}}</label>
-                        <br />
+                <br />
                 <span class="validatorMessage">{{ errors.first('companyType')?"此项请务必填写":"" }}</span>
             </div>
 
@@ -85,6 +85,7 @@
     <script src="http://pinzafile.oss-cn-shanghai.aliyuncs.com/axios/axios.js"></script>
     <script src="https://cdn.bootcss.com/vee-validate/2.2.7/vee-validate.js"></script>
     <script src="https://cdn.bootcss.com/vee-validate/2.2.7/locale/zh_CN.js"></script>
+    <script src="https://cdn.bootcss.com/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <script>
         Vue.use(VeeValidate);
@@ -135,28 +136,36 @@
             },
             methods: {
                 async submit() {
-                    
+
                     try {
                         let result = await this.$validator.validateAll();
                         if (result) {
-                            let temp=this.form;
+                            let temp = this.form;
 
-                            temp.date=(new Date).valueOf();
+                            temp.date = (new Date).valueOf();
 
-                            if (temp.cooperationType=="其它") {
-                                temp.cooperationType=this.options.otherCooperationType.name
+                            if (temp.cooperationType == "其它") {
+                                temp.cooperationType = this.options.otherCooperationType.name
                             }
-                            let baseUrl="http://192.168.1.174:7001";
+                            let baseUrl = "http://192.168.1.174:7001";
                             // baseUrl="http://govapi.pinza.com.cn";
-                            let response = await axios.post(baseUrl+"/insertMany",{
-                                token:"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4",
-                                docs:[temp],
-                                collection:"cooperation"
+                            let response = await axios.post(baseUrl + "/insertMany", {
+                                token: "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4",
+                                docs: [temp],
+                                collection: "cooperation"
                             })
 
-                            alert("您的合作需求已提交，敬请期待我们的回复！")
+                            swal({
+                                title: "提交成功",
+                                icon: "success",
+                                text:"我们会尽快安排业务专员与您取得联系。"
+                            });
                         } else {
-                            alert("请检查并填写必须内容！")
+                            swal({
+                                title: "提示",
+                                icon: "warning",
+                                text:"请检查并填写必须内容！"
+                            });
                             console.log(result)
                         }
                     } catch (error) {
