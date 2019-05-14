@@ -51,7 +51,7 @@
                         name="cooperationType" v-model="form.cooperationType"
                         :value="item.name"></input>{{item.name}}</label>
                 <label for="other"><input id="other" type="radio" v-validate="'required'" name="cooperationType"
-                        v-model="form.cooperationType" value="其它"></input>其他：</label>
+                        v-model="form.cooperationType" value="其它"></input>其它：</label>
 
                 <div v-if="form.cooperationType=='其它'"><input type="text" v-model="options.otherCooperationType.name"
                         v-validate="'required'" name="otherCooperationType">
@@ -115,7 +115,7 @@
                         }, {
                             name: "施工企业"
                         }, {
-                            name: "其他"
+                            name: "其它"
                         }, {
                             name: "材料供应商"
                         }, ],
@@ -131,18 +131,27 @@
                             name: ""
                         },
                     }
-
-
                 }
-
             },
             methods: {
                 async submit() {
-                    console.log(123)
+                    
                     try {
                         let result = await this.$validator.validateAll();
                         if (result) {
-                            console.log(result)
+                            let temp=this.form;
+
+                            temp.date=(new Date).valueOf();
+
+                            if (temp.cooperationType=="其它") {
+                                temp.cooperationType=this.options.otherCooperationType.name
+                            }
+
+                            let response = await axios.post("http://192.168.1.174:7001/insertMany",{
+                                token:"yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4",
+                                docs:[temp],
+                                collection:"cooperation"
+                            })
                         } else {
                             alert("请检查并填写必须内容！")
                             console.log(result)
