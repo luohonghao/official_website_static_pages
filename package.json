@@ -6,10 +6,11 @@
   "author": "Silver·湫曗 <autumnsilverleaves@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev":"stylus -w cooperation ",
-    "serve":"cd cooperation && browser-sync start --server --files '*.css, *.html'"
+    "dev": "stylus -w cooperation ",
+    "serve": "cd cooperation && browser-sync start --server --files '*.css, *.html'"
   },
   "dependencies": {
+    "browser-sync": "^2.26.5",
     "stylus": "^0.54.5"
   }
 }
